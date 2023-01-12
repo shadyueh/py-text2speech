@@ -7,17 +7,21 @@ from PyPDF2 import PdfReader
 
 lang = "en"
 
-PAGE = 16
+PAGE = 1
 
 def speak(text):
     tts = gTTS(text=text, lang=lang)
     filename="voice.mp3"
     tts.save(filename)
-    print("::::"+text+"::::")
+    
+    print(":::: START OF FILE ::::")
+    print(text)
+    print(":::: END OF FILE ::::")
+
     playsound.playsound(filename)
 
-reader = PdfReader("file.pdf")
-dir(reader.pages)
+
+reader = PdfReader("The Sore Feet Song by Ally Kerr (Mushishi Opening).pdf")
 
 text = ""
 # for page in reader.pages:
